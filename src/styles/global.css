@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-slate-800 text-slate-300
+}
+
+.title {
+    @apply text-5xl font-bold
+}
