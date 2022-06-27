@@ -15,7 +15,7 @@ interface videoProps {
   lessonSlug: string;
 }
 
-function Video(props: videoProps): JSX.Element {
+function Video(props: videoProps) {
   const { data } = useGetLessonBySlugQuery({
     variables: {
       slug: props.lessonSlug,
@@ -32,7 +32,7 @@ function Video(props: videoProps): JSX.Element {
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
-        <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
+        <div className="h-full max-h-[50vh] w-full max-w-[1100px] aspect-video">
           <Player>
             <Youtube
               videoId={data?.lesson.videoId}
@@ -42,8 +42,8 @@ function Video(props: videoProps): JSX.Element {
           </Player>
         </div>
       </div>
-      <div className="p-8 mx-auto max-w-[1100px]">
-        <div className="flex gap-16">
+      <div className="mobile:p-4 tablet:p-8 mx-auto max-w-[1100px]">
+        <div className="flex mobile:gap-8 laptop:gap-16 mobile:flex-col tablet:flex-row">
           <div className="flex-1">
             <h1 className="text-2xl font-bold">{data?.lesson.title}</h1>
             <p className="mt-4 text-gray-200 leading-relaxed">
@@ -65,7 +65,7 @@ function Video(props: videoProps): JSX.Element {
               </div>
             </div>)}
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 w-fit">
             <a
               href="#"
               className="p-4 text-sm bg-green-500 text-center font-bold rounded uppercase flex gap-2 items-center hover:bg-green-700 transition-colors"
@@ -83,44 +83,46 @@ function Video(props: videoProps): JSX.Element {
           </div>
         </div>
 
-        <div className="flex gap-8 mt-16">
+        <div className="flex flex-col laptop:flex-row gap-8 mobile:mt-8 laptop:mt-16">
+
           <a
             href="#"
-            className="flex bg-gray-700 rounded overflow-hidden hover:bg-gray-600 transition-colors"
+            className="shadow-lg shadow-black bg-gray-700 rounded overflow-hidden flex items-stretch mobile:gap-3 tablet:gap-6 hover:bg-gray-600 transition-colors w-fit"
           >
-            <div className="bg-green-700 flex items-center px-5 h-full">
+            <div className="bg-green-700 flex items-center px-4">
               <FileArrowDown size={40} />
             </div>
-            <div className="flex flex-col py-6 items-start justify-center ml-7">
-              <strong className="text-2xl leading-relaxed">
+            <div className="py-6 leading-relaxed mobile:w-25 tablet:w-auto">
+              <strong className="text-xl ">
                 Material complementar
               </strong>
-              <p className="text-sm text-gray-200 leading-relaxed">
+              <p className="text-xs text-gray-200 leading-relaxed">
                 Acesse o material complementar para acelerar o seu
                 desenvolvimento
               </p>
             </div>
-            <div className="flex items-center px-5 text-blue-500">
+            <div className="flex items-center pr-5 text-blue-500">
               <CaretRight size={22} />
             </div>
           </a>
+
           <a
             href="#"
-            className="flex bg-gray-700 rounded overflow-hidden hover:bg-gray-600 transition-colors"
+            className="shadow-lg shadow-black flex items-stretch mobile:gap-3 tablet:gap-6 bg-gray-700 rounded overflow-hidden hover:bg-gray-600 transition-colors w-fit"
           >
-            <div className="bg-green-700 flex items-center px-5 h-full">
+            <div className="bg-green-700 flex items-center px-4">
               <Image size={40} />
             </div>
-            <div className="flex flex-col items-start justify-center ml-7">
-              <strong className="text-2xl leading-relaxed">
+            <div className="flex flex-col py-6 items-start justify-center tablet:w-auto">
+              <strong className="text-lg ">
                 Wallpapers do evento
               </strong>
-              <p className="text-sm text-gray-200 leading-relaxed">
+              <p className="text-xs text-gray-200 leading-relaxed">
                 Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
                 máquina
               </p>
             </div>
-            <div className="flex items-center px-5 text-blue-500">
+            <div className="flex items-center mobile:pr-3 tablet:pr-5 text-blue-500">
               <CaretRight size={22} />
             </div>
           </a>
