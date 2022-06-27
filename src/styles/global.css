@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-    @apply bg-slate-800 text-slate-300
+    @apply bg-gray-900 text-gray-100;
+    -webkit-font-smoothing: antialiased;
 }
 
 .title {
