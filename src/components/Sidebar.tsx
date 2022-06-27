@@ -13,9 +13,9 @@ function Sidebar(props: sidebarProps) {
   const { data } = useGetLessonsQuery();
 
   if (props.isOpen) {
-    document.body.style = 'overflow-y: hidden'
+    document.body.classList.add('overflow-y-hidden');
   } else {
-    document.body.style = ''
+    document.body.classList.remove'('overflow-y-hidden');
   }
 
   return (
