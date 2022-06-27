@@ -15,7 +15,7 @@ function Sidebar(props: sidebarProps) {
   if (props.isOpen) {
     document.body.classList.add('overflow-y-hidden');
   } else {
-    document.body.classList.remove'('overflow-y-hidden');
+    document.body.classList.remove('overflow-y-hidden');
   }
 
   return (
