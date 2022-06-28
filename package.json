@@ -8,6 +8,9 @@
     "preview": "vite preview",
     "codegen": "graphql-codegen"
   },
+  "engines": {
+    "node": "16.15.0"
+  },
   "dependencies": {
     "@apollo/client": "^3.6.8",
     "@vime/core": "^5.3.1",
