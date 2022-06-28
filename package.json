@@ -4,9 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "start": "node ./src/main.tsx",
     "build": "tsc && vite build",
-    "preview": "vite preview",
     "codegen": "graphql-codegen"
   },
   "engines": {
