@@ -1,7 +1,7 @@
 import { List, X } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "./Logo";
+import IgniteLabLogo from "./IgniteLabLogo";
 
 interface headerProps {
   isOpen: boolean;
@@ -21,9 +21,9 @@ function Header(props: headerProps) {
   }, []);
 
   return (
-    <header className="w-full py-5 px-6 flex items-center bg-gray-700 border-b border-gray-600 justify-between desktop:justify-center">
+    <header className="w-full py-5 px-6 flex items-center bg-gray-700 border-b border-gray-600 justify-between desktop:justify-center fixed z-50">
       <Link to={"/aulas"}>
-        <Logo width={innerWidth > 420 ? 220 : 150} />
+        <IgniteLabLogo width={innerWidth > 420 ? 220 : 150} />
       </Link>
       <div
         className="cursor-pointer desktop:hidden flex items-center"

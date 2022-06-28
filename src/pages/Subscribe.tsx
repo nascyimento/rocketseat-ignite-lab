@@ -1,7 +1,8 @@
 import { FormEvent, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../components/Logo";
+import Logo from "../components/IgniteLabLogo";
 import { useCreateSubscriberMutation } from "../graphql/generated";
+import Footer from "../components/Footer";
 
 function Subscribe() {
   const [name, setName] = useState("");
@@ -28,7 +29,7 @@ function Subscribe() {
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex mobile:flex-col px-6 items-center">
       <div className="max-w-[1100px] w-full mobile:flex mobile:flex-col laptop:flex-row tablet:mt-20 justify-between items-center">
         <div className="max-w-[635px] flex flex-col mobile:items-center laptop:items-start gap-8 mobile:my-12">
-          <Logo width={237}/>
+          <Logo width={237} />
           <h1 className="block mobile:text-3xl tablet:text-5xl mobile:text-center laptop:text-left text-[2.5rem] leading-tight">
             Construa uma{" "}
             <strong className="text-blue-500">aplicação completa</strong>, do
@@ -81,6 +82,7 @@ function Subscribe() {
         className="mt-10 max-w-[1100px] w-full"
         alt=""
       />
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 interface logoProps {
   width: number;
 }
-function Logo(props: logoProps) {
+function IgniteLabLogo(props: logoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,4 +23,4 @@ function Logo(props: logoProps) {
   );
 }
 
-export default Logo;
+export default IgniteLabLogo;

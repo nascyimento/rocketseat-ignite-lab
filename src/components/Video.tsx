@@ -9,6 +9,7 @@ import {
 } from "phosphor-react";
 
 import { useGetLessonBySlugQuery } from "../graphql/generated";
+import Footer from "./Footer";
 import "./styles.css";
 
 interface videoProps {
@@ -88,7 +89,7 @@ function Video(props: videoProps) {
           </div>
         </div>
 
-        <div className="flex flex-col laptop:flex-row gap-8 mobile:mt-8 laptop:mt-16">
+        <div className="flex flex-col laptop:flex-row gap-8 mobile:my-8 laptop:mt-16">
           <a
             href="#"
             className="shadow-lg shadow-black bg-gray-700 rounded overflow-hidden flex items-stretch mobile:gap-3 tablet:gap-6 hover:bg-gray-600 transition-colors w-fit"
@@ -116,7 +117,7 @@ function Video(props: videoProps) {
               <Image size={40} />
             </div>
             <div className="flex flex-col py-6 items-start justify-center tablet:w-auto">
-              <strong className="text-lg ">Wallpapers do evento</strong>
+              <strong className="text-lg ">Wallpapers exclusivos</strong>
               <p className="text-xs text-gray-200 leading-relaxed">
                 Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
                 máquina
@@ -128,6 +129,7 @@ function Video(props: videoProps) {
           </a>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
