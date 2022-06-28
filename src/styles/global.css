@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 body {
-    @apply bg-gray-900 text-gray-100;
-    -webkit-font-smoothing: antialiased;
+  @apply bg-gray-900 text-gray-100;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .title {
-    @apply text-5xl font-bold
+  @apply text-5xl font-bold;
 }

@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../components/Logo";
 import { useCreateSubscriberMutation } from "../graphql/generated";
@@ -11,29 +11,36 @@ function Subscribe() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (localStorage.getItem("registred")) {
+      navigate("/aulas");
+    }
+  }, []);
+
   const handleSubscribe = async (event: FormEvent) => {
     event.preventDefault();
     await createSubscriber({ variables: { name, email } });
+    localStorage.setItem("registred", "true");
     navigate("/aulas");
   };
 
   return (
-    <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center px-6">
-      <div className="max-w-[1100px] w-full flex justify-between items-start mt-20 ">
-        <div className="max-w-[640px]">
-          <Logo />
-          <h1 className="block text-[2.5rem] mt-8 leading-tight">
+    <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex mobile:flex-col px-6 items-center">
+      <div className="max-w-[1100px] w-full mobile:flex mobile:flex-col laptop:flex-row tablet:mt-20 justify-between items-center">
+        <div className="max-w-[635px] flex flex-col mobile:items-center laptop:items-start gap-8 mobile:my-12">
+          <Logo width={237}/>
+          <h1 className="block mobile:text-3xl tablet:text-5xl mobile:text-center laptop:text-left text-[2.5rem] leading-tight">
             Construa uma{" "}
             <strong className="text-blue-500">aplicação completa</strong>, do
             zero, com <strong className="text-blue-500">ReactJs</strong>
           </h1>
-          <p className="text-gray-200 mt-4 leading-relaxed">
+          <p className="text-gray-200  leading-relaxed mobile:text-center laptop:text-left">
             Em apenas uma semana você vai dominar na prática uma das tecnologias
             mais utilizadas e com alta demanda para acessar as melhores
             oportunidades do mercado.
           </p>
         </div>
-        <div className="p-8 bg-gray-700 border border-gray-500 rounded-lg">
+        <div className="mobile:w-screen tablet:w-fit p-8 bg-gray-700 border border-gray-500 rounded-lg">
           <strong className="text-2xl text-gray-100 mb-6 block">
             Inscreva-se gratuitamente
           </strong>

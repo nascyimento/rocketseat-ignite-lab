@@ -20,7 +20,7 @@ function LessonCard(props: LessonProps) {
   );
 
   return (
-    <Link to={`/aulas/${props.slug}`} className="group relative">
+    <Link to={`/aulas/${props.slug}`} className="group relative" title={props.title}>
       <span className="text-gray-300 capitalize">{avaibleDateFormatted}</span>
       {props.active && <div className="bg-green-500 w-5 h-5 absolute top-[55%] -translate-x-[45%] rotate-45 border-l border-b rounded border-gray-500 group-hover:border-green-300 "></div>}
       <div

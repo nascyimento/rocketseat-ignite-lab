@@ -5,7 +5,7 @@ import {
   DiscordLogo,
   FileArrowDown,
   Image,
-  Lightning
+  Lightning,
 } from "phosphor-react";
 
 import { useGetLessonBySlugQuery } from "../graphql/generated";
@@ -49,21 +49,26 @@ function Video(props: videoProps) {
             <p className="mt-4 text-gray-200 leading-relaxed">
               {data.lesson.description}
             </p>
-            {data.lesson.teacher && (<div className="flex gap-4 items-center  mt-6">
-              <img
-                src={data.lesson.teacher.avatarURL}
-                alt=""
-                className="w-16 border-2 rounded-full border-blue-500"
-              />
-              <div className="flex flex-col">
-                <strong className="text-2xl">
-                  {data.lesson.teacher.name}
-                </strong>
-                <span className="text-gray-200 text-sm">
-                  {data.lesson.teacher.bio}
-                </span>
+            {data.lesson.teacher && (
+              <div
+                className="flex gap-4 items-center mt-6 w-fit"
+                title={data.lesson.teacher.name}
+              >
+                <img
+                  src={data.lesson.teacher.avatarURL}
+                  alt={data.lesson.teacher.name}
+                  className="w-16 border-2 rounded-full border-blue-500"
+                />
+                <div className="flex flex-col">
+                  <strong className="text-2xl">
+                    {data.lesson.teacher.name}
+                  </strong>
+                  <span className="text-gray-200 text-sm">
+                    {data.lesson.teacher.bio}
+                  </span>
+                </div>
               </div>
-            </div>)}
+            )}
           </div>
           <div className="flex flex-col gap-4 w-fit">
             <a
@@ -84,7 +89,6 @@ function Video(props: videoProps) {
         </div>
 
         <div className="flex flex-col laptop:flex-row gap-8 mobile:mt-8 laptop:mt-16">
-
           <a
             href="#"
             className="shadow-lg shadow-black bg-gray-700 rounded overflow-hidden flex items-stretch mobile:gap-3 tablet:gap-6 hover:bg-gray-600 transition-colors w-fit"
@@ -93,9 +97,7 @@ function Video(props: videoProps) {
               <FileArrowDown size={40} />
             </div>
             <div className="py-6 leading-relaxed mobile:w-25 tablet:w-auto">
-              <strong className="text-xl ">
-                Material complementar
-              </strong>
+              <strong className="text-xl ">Material complementar</strong>
               <p className="text-xs text-gray-200 leading-relaxed">
                 Acesse o material complementar para acelerar o seu
                 desenvolvimento
@@ -114,9 +116,7 @@ function Video(props: videoProps) {
               <Image size={40} />
             </div>
             <div className="flex flex-col py-6 items-start justify-center tablet:w-auto">
-              <strong className="text-lg ">
-                Wallpapers do evento
-              </strong>
+              <strong className="text-lg ">Wallpapers do evento</strong>
               <p className="text-xs text-gray-200 leading-relaxed">
                 Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
                 máquina
