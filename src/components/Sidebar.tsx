@@ -24,11 +24,11 @@ function Sidebar(props: sidebarProps) {
         "bg-gray-700 p-6 border-l border-gray-600 desktop:block ",
         {
           "hidden w-[348px]": !props.isOpen,
-          "fixed z-[1000] w-screen block overflow-y-auto h-screen pb-[130px]": props.isOpen,
+          "fixed z-[1000] w-screen block overflow-y-auto h-screen pb-52": props.isOpen,
         }
       )}
     >
-      <span className="font-bold text-2xl pb-8 mb-6 border-b border-gray-500 block text-center">
+      <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block text-center">
         Cronograma das aulas
       </span>
       <div className="flex flex-col gap-8">
