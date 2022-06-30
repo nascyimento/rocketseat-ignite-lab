@@ -28,7 +28,7 @@ function Sidebar(props: sidebarProps) {
         }
       )}
     >
-      <span className="font-bold text-2xl pb-4 mb-6 border-b border-gray-500 block text-center">
+      <span className="font-bold text-2xl pb-8 mb-6 border-b border-gray-500 block text-center">
         Cronograma das aulas
       </span>
       <div className="flex flex-col gap-8">
