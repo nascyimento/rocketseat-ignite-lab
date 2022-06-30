@@ -24,7 +24,7 @@ function Sidebar(props: sidebarProps) {
         "bg-gray-700 p-6 border-l border-gray-600 desktop:block ",
         {
           "hidden w-[348px]": !props.isOpen,
-          "fixed z-[1000] w-screen block overflow-y-auto h-screen pb-52": props.isOpen,
+          "fixed z-[1000] w-screen block overflow-y-auto h-screen pb-52 tablet:pb-[130px]": props.isOpen,
         }
       )}
     >
