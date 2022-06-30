@@ -11,3 +11,14 @@ body {
 .title {
   @apply text-5xl font-bold;
 }
+
+@media (min-width: 1024px) {
+  .subscribe {
+    min-height: calc(100vh - 64px) !important;
+  }
+}
+@media (max-width: 1024px) {
+  .subscribe {
+    padding-bottom: 2rem;
+  }
+}
